@@ -1,0 +1,98 @@
+:root {
+    --my-padding: 0.4rem;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    color: rgb(63, 134, 152);
+    height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "content1 content1 content1 content1"
+    "content1 content1 content1 content1"
+    "content3 content3 content2 content2"
+    "content3 content3 content4 content4"
+    "footer footer footer footer";
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+nav {
+    background-color: rgb(0, 0, 0);
+    grid-area: nav;
+    padding: var(--my-padding);
+}
+.nav-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(255, 78, 65);
+}
+.content1 {
+    background-color: rgb(135, 175, 201);
+    grid-area: content1;
+    padding: var(--my-padding);
+}
+.content2 {
+    background-color: rgb(221, 190, 227);
+    grid-area: content2;
+    padding: var(--my-padding);
+}
+.content3 {
+    background-color: rgb(129, 19, 53);
+    grid-area: content3;
+    padding: var(--my-padding);
+}
+.content4 {
+    background-color: rgb(97, 179, 105);
+    grid-area: content4;
+    padding: var(--my-padding);
+}
+.main {
+    background-color: rgb(255, 0, 102);
+    grid-area: main;
+    padding: var(--my-padding);
+}
+.footer {
+    background-color: rgb(255, 129, 39);
+    text-align: center;
+    grid-area: footer;
+    padding: var(--my-padding);
+}
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "nav nav nav"
+        "content1 content1 content1"
+        "content1 content1 content1"
+        "nav content3 content3"
+        "nav content3 content3"
+        "nav footer footer"
+        "nav content4 content2";
+    }
+}
+@media (max-width: 480px) {
+    .container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-areas: 
+        "nav"
+        "main"
+        "content1"
+        "content3"
+        "content3"
+        "footer"
+        "content4"
+        "content2";
+    }
+}
